@@ -1,0 +1,9 @@
+{
+  "CreateConsentUrl"  : "http://bacb-bitsy.uksouth.cloudapp.azure.com/account-access-consents",
+  "UpdateConsentUrl"  : "http://172.16.238.106:31816/account-access-consents/internal/",
+  "GetConsentUrl"     : "http://172.16.238.106:31816/account-access-consents/",
+  "RevokeConsentUrl"  : "http://172.16.238.106:31816/account-access-consents/",
+  "GetAccountListUrl" : "http://bacb-bitsy.uksouth.cloudapp.azure.com/accounts",
+  "AccountDetailsUrl" : "http://bacb-bitsy.uksouth.cloudapp.azure.com/accounts/",
+  "GetBalancesUrl"    : "http://bacb-bitsy-balances.uksouth.cloudapp.azure.com/accounts/"
+}
