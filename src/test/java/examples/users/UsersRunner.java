@@ -16,7 +16,7 @@ class UsersRunner {
 
     @Karate.Test
     Karate testUsers() {
-        return new Karate().feature("CreateConsent").relativeTo(getClass());
+        return new Karate().feature().relativeTo(getClass());
     }
     @Test
          void testParallel(){

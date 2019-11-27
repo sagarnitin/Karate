@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db1971b0-50be-471f-ac3f-c47439fa3cfc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/examples/users/WebUpdateConsent.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/examples/users/testdata/Base64Encoder.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/examples/users/testdata/Tokengeneration.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/ExamplesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/ExamplesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/AccountDetails.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/AccountDetails.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/RevokeConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/RevokeConsent.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/UpdateConsent.feature" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/UsersRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/UsersRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/testdata/URL.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/testdata/URL.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/testdata/cons.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/testdata/cons.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/testdata/headers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/testdata/headers.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.Feature: GetBalances">
+  <component name="RunManager" selected="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent">
     <configuration name="Feature: GetBalances" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" />
@@ -119,15 +99,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: US#02,Check without TransactionToDateTime and TransactionFromDateTime" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" />
       <option name="GLUE" value="com.intuit.karate" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#02\,Check without TransactionToDateTime and TransactionFromDateTime$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#02\,Check without TransactionToDateTime and TransactionFromDateTime$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#02,Check without TransactionToDateTime and TransactionFromDateTime" />
+      <option name="NAME_FILTER" value="^US\#10\,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#10\,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -138,15 +118,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" />
       <option name="GLUE" value="com.intuit.karate" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#10\,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#10\,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" />
+      <option name="NAME_FILTER" value="^US\#10\,Check with Mandatory authorisation to Authorise the consent$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#10\,Check with Mandatory authorisation to Authorise the consent$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -177,19 +157,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber java.Scenario: US#02,Check without TransactionToDateTime and TransactionFromDateTime" />
       <item itemvalue="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" />
       <item itemvalue="Cucumber java.Feature: Transaction" />
       <item itemvalue="Cucumber java.Scenario: US#21,check Transaction Api &lt;name&gt; AccountId" />
       <item itemvalue="Cucumber java.Feature: GetBalances" />
+      <item itemvalue="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent" />
         <item itemvalue="Cucumber java.Feature: GetBalances" />
         <item itemvalue="Cucumber java.Feature: Transaction" />
         <item itemvalue="Cucumber java.Scenario: US#21,check Transaction Api &lt;name&gt; AccountId" />
         <item itemvalue="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" />
-        <item itemvalue="Cucumber java.Scenario: US#02,Check without TransactionToDateTime and TransactionFromDateTime" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +194,7 @@
       <workItem from="1572514025241" duration="5165000" />
       <workItem from="1572520858637" duration="93708000" />
       <workItem from="1574846629516" duration="857000" />
-      <workItem from="1574847708326" duration="122000" />
+      <workItem from="1574847708326" duration="1165000" />
     </task>
     <servers />
   </component>
