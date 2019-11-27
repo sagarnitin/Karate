@@ -1,9 +1,10 @@
 {
-  "CreateConsentUrl"  : "http://bacb-bitsy.uksouth.cloudapp.azure.com/account-access-consents",
-  "UpdateConsentUrl"  : "http://172.16.238.106:31816/account-access-consents/internal/",
-  "GetConsentUrl"     : "http://172.16.238.106:31816/account-access-consents/",
-  "RevokeConsentUrl"  : "http://172.16.238.106:31816/account-access-consents/",
-  "GetAccountListUrl" : "http://bacb-bitsy.uksouth.cloudapp.azure.com/accounts",
-  "AccountDetailsUrl" : "http://bacb-bitsy.uksouth.cloudapp.azure.com/accounts/",
-  "GetBalancesUrl"    : "http://bacb-bitsy-balances.uksouth.cloudapp.azure.com/accounts/"
+  "CreateConsentUrl"           : "https://bacb-apim.uksouth.cloudapp.azure.com/consent-apis/open-banking/v1.0.0/aisp/account-access-consents",
+  "UpdateConsentUrl"           : "https://bacb-apim.uksouth.cloudapp.azure.com/consent-apis/open-banking/v1.0.0/aisp/account-access-consents/account-access-consents/internal/",
+  "GetConsentUrl"              : "https://bacb-apim.uksouth.cloudapp.azure.com/consent-apis/open-banking/v1.0.0/aisp/account-access-consents/",
+  "RevokeConsentUrl"           : "https://bacb-apim.uksouth.cloudapp.azure.com/consent-apis/open-banking/v1.0.0/aisp/account-access-consents/",
+  "GetAccountListUrl"          : "https://bacb-apim.uksouth.cloudapp.azure.com/account-apis/open-banking/v1.0.0/aisp/accounts",
+  "AccountDetailsUrl/T24"      : "https://bacb-apim.uksouth.cloudapp.azure.com/account-apis/open-banking/v1.0.0/aisp/accounts/",
+  "GetBalancesUrl"             : "https://bacb-apim.uksouth.cloudapp.azure.com/balance-apis/open-banking/v1.0.0/aisp/accounts/",
+  "AccountTransactionUrl/T24"  : "https://bacb-apim.uksouth.cloudapp.azure.com/transaction-apis/open-banking/v1.0.0/aisp/accounts/"
 }

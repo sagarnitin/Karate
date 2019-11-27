@@ -1,8 +1,8 @@
 {
-  "ConsentAuth"       : " Basic YWRtaW46YWRtaW4=",
   "UpdateContentType" : "application/json",
-  "AccountAuth"       : "Bearer eyJ4NXQiOiJOVEF4Wm1NeE5ETXlaRGczTVRVMVpHTTBNekV6T0RKaFpXSTRORE5sWkRVMU9HRmtOakZpTVEiLCJraWQiOiJOVEF4Wm1NeE5ETXlaRGczTVRVMVpHTTBNekV6T0RKaFpXSTRORE5sWkRVMU9HRmtOakZpTVEiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxMDAyNjAiLCJhdWQiOiJSWmJGYTNFZnJNVU1RdWlDc0ppdDVVN2ZwemNhIiwibmJmIjoxNTcyOTQyNjE3LCJhenAiOiJSWmJGYTNFZnJNVU1RdWlDc0ppdDVVN2ZwemNhIiwic2NvcGUiOiJkZWZhdWx0IiwiaXNzIjoiaHR0cHM6XC9cL2JhY2ItdGVzdC51a3NvdXRoLmNsb3VkYXBwLmF6dXJlLmNvbTo5NDQ0XC9vYXV0aDJcL3Rva2VuIiwiZXhwIjoxNTcyOTQ2MjE3LCJpYXQiOjE1NzI5NDI2MTcsImp0aSI6ImJiMzZlOWM5LTIyMDEtNDliMS04NTRkLTUwZWVhNGZlMzkyZSJ9.FvW5pgdnuVjq7s9sMQSI3NrVfF5jo4sem1d4boV_8lGse9lrybInKbarLuHj9PmNg-Lv8a3oQqs_TkZqrSCKMjF-VRfSQYliBs-v77qd2bW7C1wbAxcdm52BKtdp0c2VtJhfxw4oLJ4A5L8eeeh_Mip7IXXAPTikX9AORo-D-ztGQJrgoD4P51z3fvO_EXTgg817dSZ8nUZiw5fCNxZFxHGFRxetIDqTcMqiLCKnbE6HfafavD1_JItx5YVRH_ji8DSTLdglevOvLIEVx5Rh5sUSV7uzlPlKhtnpjGvIoLUMKua-pNpJEgkmJ5LmgrLwNfKK5fZ5nxfJRpvxQGgIUQ",
   "AccountsId1"       : "13315",
-  "CustomerId"        : "100260"
+  "CustomerId"        : "100260",
+  "TransactionfromBookingDateTime" : "2014-04-22T04:28:12",
+  "TransactiontoBookingDateTime"   : "2014-04-24T04:28:12"
 
 }
