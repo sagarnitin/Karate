@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db1971b0-50be-471f-ac3f-c47439fa3cfc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/AccountDetails.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/AccountDetails.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/UsersRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/UsersRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,16 +59,16 @@
       <recent name="C:\Users\raghavendran.MAVERICSYSTEMS\IdeaProjects\Bacb\src\test\java\examples\users\testdata" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber java.Scenario: US#21,Check Balances Api response AccountId, type and DateTime">
-    <configuration name="Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber java.Scenario: US#19,Check Accounts with detail permissions">
+    <configuration name="Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/AccountDetails.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" />
       <option name="GLUE" value="com.intuit.karate" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#15\,Check Accounts details Api with detail permissions of Currency\,AccountType and AccountSubType$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#15\,Check Accounts details Api with detail permissions of Currency\,AccountType and AccountSubType$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType" />
+      <option name="NAME_FILTER" value="^US\#19\,Check Accounts detail permissions with SchemeName and Identification$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#19\,Check Accounts detail permissions with SchemeName and Identification$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -88,15 +79,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: US#19,Check Accounts with detail permissions" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" />
       <option name="GLUE" value="com.intuit.karate" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#19\,Check Accounts detail permissions with SchemeName and Identification$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#19\,Check Accounts detail permissions with SchemeName and Identification$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" />
+      <option name="NAME_FILTER" value="^US\#19\,Check Accounts with detail permissions$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#19\,Check Accounts with detail permissions$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#19,Check Accounts with detail permissions" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -165,19 +156,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber java.Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType" />
       <item itemvalue="Cucumber java.Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" />
       <item itemvalue="Cucumber java.Scenario: US#19,check without Authorization for Detail permissions" />
       <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api &lt;name&gt; AccountId" />
       <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api response AccountId, type and DateTime" />
+      <item itemvalue="Cucumber java.Scenario: US#19,Check Accounts with detail permissions" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber java.Scenario: US#19,Check Accounts with detail permissions" />
         <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api response AccountId, type and DateTime" />
         <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api &lt;name&gt; AccountId" />
         <item itemvalue="Cucumber java.Scenario: US#19,check without Authorization for Detail permissions" />
         <item itemvalue="Cucumber java.Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" />
-        <item itemvalue="Cucumber java.Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType" />
       </list>
     </recent_temporary>
   </component>
@@ -252,22 +243,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1575350993972" />
-    <state width="1237" height="258" key="GridCell.Tab.0.bottom" timestamp="1575536636527">
+    <state width="1237" height="209" key="GridCell.Tab.0.bottom" timestamp="1575544327170">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="258" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575536636527" />
-    <state width="1237" height="258" key="GridCell.Tab.0.center" timestamp="1575536636527">
+    <state width="1237" height="209" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575544327170" />
+    <state width="1237" height="209" key="GridCell.Tab.0.center" timestamp="1575544327169">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="258" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1575536636527" />
-    <state width="1237" height="258" key="GridCell.Tab.0.left" timestamp="1575536636527">
+    <state width="1237" height="209" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1575544327169" />
+    <state width="1237" height="209" key="GridCell.Tab.0.left" timestamp="1575544327169">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="258" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1575536636527" />
-    <state width="1237" height="258" key="GridCell.Tab.0.right" timestamp="1575536636527">
+    <state width="1237" height="209" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1575544327169" />
+    <state width="1237" height="209" key="GridCell.Tab.0.right" timestamp="1575544327170">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="258" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1575536636527" />
+    <state width="1237" height="209" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1575544327170" />
     <state x="297" y="151" width="672" height="677" key="run.anything.popup" timestamp="1575448889513">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
