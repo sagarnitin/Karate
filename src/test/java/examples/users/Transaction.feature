@@ -1,3 +1,5 @@
+@AccountTransaction
+
 Feature: Testing of Transaction Account api
 
   Background:
@@ -6,6 +8,7 @@ Feature: Testing of Transaction Account api
     * def Transactiondata =  read('testdata/headers.json')
     * url TransactionUrl['AccountTransactionUrl/T24']
 
+  @Sanity
   Scenario: US#20,Check Transaction Api with Mandatory Authorisation
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
     * def Token = result.Token
@@ -48,7 +51,7 @@ Feature: Testing of Transaction Account api
     When method get
     Then status 401
 
-  Scenario: US#21,check Transaction Api without fromBookingDateTime
+  Scenario: US#21,check Transaction Api without fromBookingDateTime and without passing any dates in consent
     * def result = call read('CreateAccessToken.feature@tag=ConsentAuthorisedWithOutTransactionDateTime')
     * def Token = result.Token
     * print Token
@@ -59,7 +62,7 @@ Feature: Testing of Transaction Account api
     Then status 200
     And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
 
-  Scenario: US#21,check Transaction Api without toBookingDateTime
+  Scenario: US#21,check Transaction Api without toBookingDateTime and without passing any dates in consent
     * def result = call read('CreateAccessToken.feature@tag=ConsentAuthorisedWithOutTransactionDateTime')
     * def Token = result.Token
     * print Token
@@ -70,6 +73,122 @@ Feature: Testing of Transaction Account api
     Then status 200
     And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
 #    And match response.Data.Transactions == []
+
+  Scenario: US#21,check Transaction Api without toBookingDateTime and fromBookingDateTime and without passing any dates in consent
+    * def result = call read('CreateAccessToken.feature@tag=ConsentAuthorisedWithOutTransactionDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    * print response
+#   And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+    And match response.Data.Transactions == []
+
+  Scenario: US#21,check with only fromBookingDateTime in Transaction Api and with toBookingDateTime in consent
+    * def result = call read('CreateAccessToken.feature@tag=ReadTransactionsWithOutTransactionFromDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And param fromBookingDateTime = Transactiondata.TransactionfromBookingDateTime
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+
+  Scenario: US#21,check with only toBookingDateTime in Transaction Api and with fromBookingDateTime in consent
+    * def result = call read('CreateAccessToken.feature@tag=ReadTransactionsWithOutTransactionToDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And param toBookingDateTime =  Transactiondata.TransactiontoBookingDateTime
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+
+  Scenario: US#21,check with only toBookingDateTime in Transaction Api and with toBookingDateTime in consent
+    * def result = call read('CreateAccessToken.feature@tag=ReadTransactionsWithOutTransactionFromDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And param toBookingDateTime =  Transactiondata.TransactiontoBookingDateTime
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+
+  Scenario: US#21,check with only fromBookingDateTime in Transaction Api and with FromBookingDateTime in consent
+    * def result = call read('CreateAccessToken.feature@tag=ReadTransactionsWithOutTransactionToDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And param fromBookingDateTime = Transactiondata.TransactionfromBookingDateTime
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+
+  Scenario: US#21,check withOut any dates in Transaction Api and with fromBookingDateTime in consent
+    * def result = call read('CreateAccessToken.feature@tag=ReadTransactionsWithOutTransactionToDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+
+  Scenario: US#21,check withOut any dates in Transaction Api and with toBookingDateTime in consent
+    * def result = call read('CreateAccessToken.feature@tag=ReadTransactionsWithOutTransactionFromDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+
+  Scenario: US#21,check without toBookingDateTime and fromBookingDateTime in Transaction Api and with passing both the dates in consent
+    * def result = call read('CreateAccessToken.feature@tag=ConsentAuthorisedWithBothTransactionDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    * print response
+#   And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+    And match response.Data.Transactions == []
+
+  Scenario: US#21,check with toBookingDateTime and fromBookingDateTime in Transaction Api and withOut any dates in Consent
+    * def result = call read('CreateAccessToken.feature@tag=ConsentAuthorisedWithOutTransactionDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And param fromBookingDateTime = Transactiondata.TransactionfromBookingDateTime
+    And param toBookingDateTime =  Transactiondata.TransactiontoBookingDateTime
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    * print response
+#   And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+    And match response.Data.Transactions == []
+
+  Scenario: US#21,check with toBookingDateTime and fromBookingDateTime in Transaction Api and with passing both the dates in consent
+    * def result = call read('CreateAccessToken.feature@tag=ConsentAuthorisedWithBothTransactionDateTime')
+    * def Token = result.Token
+    * print Token
+    Given path Transactiondata.AccountsId1 +'/transactions'
+    And param fromBookingDateTime = Transactiondata.TransactionfromBookingDateTime
+    And param toBookingDateTime =  Transactiondata.TransactiontoBookingDateTime
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    * print response
+#   And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
+    And match response.Data.Transactions == []
 
   Scenario Outline: US#21,check Transaction Api with Transaction period more than 6+ months
     * def result = call read('CreateAccessToken.feature@tag=ConsentAuthorisedWithOutTransactionDateTime')
@@ -84,23 +203,11 @@ Feature: Testing of Transaction Account api
     And match response.Data.Transactions == []
     And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
 
-  Examples:
-    |     fromBookingDateTime    |    toBookingDateTime     |
-    |    2014-01-22T04:28:12     |   2014-07-24T04:28:12    |
-    |    2014-04-22T04:28:12     |   2014-11-24T04:28:12    |
-    |    2014-11-22T04:28:12     |   2015-06-24T04:28:12    |
-
-  Scenario: US#21,check Transaction Api without toBookingDateTime and fromBookingDateTime
-    * def result = call read('CreateAccessToken.feature@tag=ConsentAuthorisedWithOutTransactionDateTime')
-    * def Token = result.Token
-    * print Token
-    Given path Transactiondata.AccountsId1 +'/transactions'
-    And header Authorization = "Bearer " + Token
-    When method get
-    Then status 200
-    * print response
-#   And match response.Data.Transactions[0].AccountId == Transactiondata.AccountsId1
-    And match response.Data.Transactions == []
+    Examples:
+      |     fromBookingDateTime    |    toBookingDateTime     |
+      |    2014-01-22T04:28:12     |   2014-07-24T04:28:12    |
+      |    2014-04-22T04:28:12     |   2014-11-24T04:28:12    |
+      |    2014-11-22T04:28:12     |   2015-06-24T04:28:12    |
 
   Scenario Outline: US#21,check Transaction Api <name> AccountId
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
@@ -114,10 +221,10 @@ Feature: Testing of Transaction Account api
     Then status 400
 
     Examples:
-    |AccountsId|   name              |
-    |  13314   |with invalid         |
-    |  13749   |with invalid         |
-    |  13DGH   |with invalid charaters|
+      |AccountsId|   name              |
+      |  13314   |with invalid         |
+      |  13749   |with invalid         |
+      |  13DGH   |with invalid charaters|
 
   Scenario: US#21,check Transaction Api without AccountId
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')

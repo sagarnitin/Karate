@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db1971b0-50be-471f-ac3f-c47439fa3cfc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/AccountDetails.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/AccountDetails.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/UsersRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/UsersRunner.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,44 +41,100 @@
   </component>
   <component name="ProjectId" id="1Sp6NAtrB6vtgfvE2UD8AT7bDI7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myproject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode" />
     <property name="nodejs.cucumber.cucumber_node_package_dir" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\raghavendran.MAVERICSYSTEMS\Desktop\Bacb\src\main\java\com\bitsy\customjavacode" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\raghavendran.MAVERICSYSTEMS\IdeaProjects\Bacb\src\test\java\examples\users" />
       <recent name="C:\Users\raghavendran.MAVERICSYSTEMS\IdeaProjects\Bacb\src\test\java\examples\users\Feature\T24Apis" />
       <recent name="C:\Users\raghavendran.MAVERICSYSTEMS\IdeaProjects\Bacb\src\test\java\examples\users\testdata" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent">
-    <configuration name="Feature: GetBalances" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber java.Scenario: US#21,Check Balances Api response AccountId, type and DateTime">
+    <configuration name="Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/AccountDetails.feature" />
+      <option name="GLUE" value="com.intuit.karate" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="Bacb" />
+      <option name="NAME_FILTER" value="^US\#15\,Check Accounts details Api with detail permissions of Currency\,AccountType and AccountSubType$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#15\,Check Accounts details Api with detail permissions of Currency\,AccountType and AccountSubType$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" />
+      <option name="GLUE" value="com.intuit.karate" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="Bacb" />
+      <option name="NAME_FILTER" value="^US\#19\,Check Accounts detail permissions with SchemeName and Identification$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#19\,Check Accounts detail permissions with SchemeName and Identification$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: US#19,check without Authorization for Detail permissions" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" />
+      <option name="GLUE" value="com.intuit.karate" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="Bacb" />
+      <option name="NAME_FILTER" value="^US\#19\,check without Authorization for Detail permissions$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#19\,check without Authorization for Detail permissions$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#19,check without Authorization for Detail permissions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: US#21,Check Balances Api &lt;name&gt; AccountId" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" />
       <option name="GLUE" value="com.intuit.karate" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
-      <option name="SUGGESTED_NAME" value="Feature: GetBalances" />
+      <option name="NAME_FILTER" value="^US\#21\,Check Balances Api .* AccountId$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#21\,Check Balances Api .* AccountId$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#21,Check Balances Api &lt;name&gt; AccountId" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -81,71 +145,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: Transaction" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: US#21,Check Balances Api response AccountId, type and DateTime" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" />
       <option name="GLUE" value="com.intuit.karate" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
-      <option name="SUGGESTED_NAME" value="Feature: Transaction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" />
-      <option name="GLUE" value="com.intuit.karate" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#10\,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#10\,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" />
-      <option name="GLUE" value="com.intuit.karate" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#10\,Check with Mandatory authorisation to Authorise the consent$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#10\,Check with Mandatory authorisation to Authorise the consent$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#10,Check with Mandatory authorisation to Authorise the consent" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: US#21,check Transaction Api &lt;name&gt; AccountId" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" />
-      <option name="GLUE" value="com.intuit.karate" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#21\,check Transaction Api .* AccountId$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#21\,check Transaction Api .* AccountId$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#21,check Transaction Api &lt;name&gt; AccountId" />
+      <option name="NAME_FILTER" value="^US\#21\,Check Balances Api response AccountId\, type and DateTime$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#21\,Check Balances Api response AccountId\, type and DateTime$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#21,Check Balances Api response AccountId, type and DateTime" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -157,21 +165,33 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" />
-      <item itemvalue="Cucumber java.Feature: Transaction" />
-      <item itemvalue="Cucumber java.Scenario: US#21,check Transaction Api &lt;name&gt; AccountId" />
-      <item itemvalue="Cucumber java.Feature: GetBalances" />
-      <item itemvalue="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent" />
+      <item itemvalue="Cucumber java.Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType" />
+      <item itemvalue="Cucumber java.Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" />
+      <item itemvalue="Cucumber java.Scenario: US#19,check without Authorization for Detail permissions" />
+      <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api &lt;name&gt; AccountId" />
+      <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api response AccountId, type and DateTime" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent" />
-        <item itemvalue="Cucumber java.Feature: GetBalances" />
-        <item itemvalue="Cucumber java.Feature: Transaction" />
-        <item itemvalue="Cucumber java.Scenario: US#21,check Transaction Api &lt;name&gt; AccountId" />
-        <item itemvalue="Cucumber java.Scenario: US#10,Check with Mandatory authorisation to Authorise the consent WithOut TransactionFromDateTime" />
+        <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api response AccountId, type and DateTime" />
+        <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api &lt;name&gt; AccountId" />
+        <item itemvalue="Cucumber java.Scenario: US#19,check without Authorization for Detail permissions" />
+        <item itemvalue="Cucumber java.Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification" />
+        <item itemvalue="Cucumber java.Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -194,7 +214,20 @@
       <workItem from="1572514025241" duration="5165000" />
       <workItem from="1572520858637" duration="93708000" />
       <workItem from="1574846629516" duration="857000" />
-      <workItem from="1574847708326" duration="1165000" />
+      <workItem from="1574847708326" duration="1795000" />
+      <workItem from="1574853307967" duration="1774000" />
+      <workItem from="1574855609300" duration="1960000" />
+      <workItem from="1574862154007" duration="2232000" />
+      <workItem from="1574864479586" duration="2275000" />
+      <workItem from="1574868100720" duration="842000" />
+      <workItem from="1574915552709" duration="1781000" />
+      <workItem from="1574917379178" duration="2286000" />
+      <workItem from="1574921132547" duration="821000" />
+      <workItem from="1574923228033" duration="1784000" />
+      <workItem from="1574925074043" duration="1653000" />
+      <workItem from="1574930511738" duration="1785000" />
+      <workItem from="1575264290683" duration="971000" />
+      <workItem from="1575267171844" duration="257000" />
     </task>
     <servers />
   </component>
@@ -213,6 +246,32 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575350993972">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1575350993972" />
+    <state width="1237" height="258" key="GridCell.Tab.0.bottom" timestamp="1575536636527">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="258" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575536636527" />
+    <state width="1237" height="258" key="GridCell.Tab.0.center" timestamp="1575536636527">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="258" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1575536636527" />
+    <state width="1237" height="258" key="GridCell.Tab.0.left" timestamp="1575536636527">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="258" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1575536636527" />
+    <state width="1237" height="258" key="GridCell.Tab.0.right" timestamp="1575536636527">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="258" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1575536636527" />
+    <state x="297" y="151" width="672" height="677" key="run.anything.popup" timestamp="1575448889513">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" width="672" height="677" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1575448889513" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Bacb$Feature__CreateConsent.ic" NAME="Feature: CreateConsent Coverage Results" MODIFIED="1572861130231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

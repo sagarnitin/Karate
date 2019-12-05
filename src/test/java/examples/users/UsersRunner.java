@@ -1,6 +1,8 @@
 package examples.users;
 
 import com.intuit.karate.KarateOptions;
+import com.intuit.karate.Results;
+import com.intuit.karate.Runner;
 import com.intuit.karate.junit5.Karate;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
@@ -10,21 +12,30 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+//import static org.junit.Assert.*;
 
-@KarateOptions(tags = {"~@ignore"})
+@KarateOptions(tags = {})
 class UsersRunner {
 
-    @Karate.Test
-    Karate testUsers() {
-        return new Karate().feature().relativeTo(getClass());
-    }
+//    @Karate.Test
+//    Karate testUsers() {
+//        return new Karate().feature("CreateConsent").relativeTo(getClass());
+//    }
+//    @Test
+//         void testParallel(){
+//        String karateOutputPath = "target/surefire-reports";
+//        generateReport(karateOutputPath);
+//    }
+
     @Test
-         void testParallel(){
+    public void testParallel() {
         String karateOutputPath = "target/surefire-reports";
-        generateReport(karateOutputPath);
+        Results results = Runner.parallel(getClass(), 1,karateOutputPath);
+        generateReport(results.getReportDir());
+//        assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
     }
 
-private static void generateReport(String karateOutputPath ) {
+public static void generateReport(String karateOutputPath ) {
 //    String karateOutputPath = "target/surefire-reports";
     Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] {"json"}, true);
     ArrayList<String> jsonPaths = new ArrayList<>(jsonFiles.size());

@@ -1,3 +1,5 @@
+@GetConsent
+
 Feature: Testing GetConsent api
 
   Background:

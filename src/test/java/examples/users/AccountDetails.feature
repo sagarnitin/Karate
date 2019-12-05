@@ -1,3 +1,5 @@
+@AccountDetail @all
+
 Feature: Testing of Accounts Details api
 
  Background:
@@ -6,6 +8,7 @@ Feature: Testing of Accounts Details api
    * def Accountheader =  read('testdata/headers.json')
    * url AccountDetailURL['AccountDetailsUrl/T24']
 
+  @Sanity
   Scenario: US#15,Check Accounts details with detail permissions
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
     * def AccountURL =  read('testdata/URL.json')
@@ -49,11 +52,17 @@ Feature: Testing of Accounts Details api
     And header Authorization = "Bearer " + Token
     When method get
     Then status 400
+    * print response
+    And match response.Code == "Bad Request"
+#    And match response.Message == ["#string"]
+    And match response.Errors[*].ErrorCode contains any ["UK.OBIE.Field.Expected","UK.OBIE.Field.Invalid","UK.OBIE.Field.InvalidDate","UK.OBIE.Field.Missing","UK.OBIE.Field.Unexpected","UK.OBIE.Header.Invalid","UK.OBIE.Header.Missing","UK.OBIE.Reauthenticate","UK.OBIE.Resource.ConsentMismatch","UK.OBIE.Resource.InvalidConsentStatus","UK.OBIE.Resource.InvalidFormat","UK.OBIE.Resource.NotFound","UK.OBIE.Rules.AfterCutOffDateTime","UK.OBIE.Rules.DuplicateReference","UK.OBIE.Signature.Invalid","UK.OBIE.Signature.InvalidClaim", "UK.OBIE.Signature.Malformed", "UK.OBIE.Signature.Missing", "UK.OBIE.Signature.MissingClaim", "UK.OBIE.Signature.Unexpected", "UK.OBIE.UnexpectedError", "UK.OBIE.Unsupported.AccountIdentifier", "UK.OBIE.Unsupported.AccountSecondaryIdentifier", "UK.OBIE.Unsupported.Currency", "UK.OBIE.Unsupported.Frequency", "UK.OBIE.Unsupported.LocalInstrument", "UK.OBIE.Unsupported.Scheme"]
+    And match response.Errors[0].Message == "Provided account number is Invalid"
+
 
     Examples:
       |      AccountNo    |    name                      |
       |   13315738833     |with invalid                  |
-      |   13315GFDYJK     |with invalid special charaters|
+#      |   13315GFDYJK     |with invalid special charaters|
 
   Scenario: US#15,Check Accounts details Api with detail permissions of Currency,AccountType and AccountSubType
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
@@ -63,11 +72,11 @@ Feature: Testing of Accounts Details api
     And header Authorization = "Bearer " + Token
     When method get
     Then status 200
-    And match response.Data.Account[*].AccountId contains ["#string"]
+    And match response.Data.Account[0].AccountId contains "#string"
     And print response
-    And match response.Data.Account[*].Currency contains ["USD"]
-    And match response.Data.Account[*].AccountType contains ["#string"]
-    And match response.Data.Account[*].AccountSubType contains ["#string"]
+    And match response.Data.Account[0].Currency == "#regex[A-Z]{3}"
+    And match response.Data.Account[*].AccountType contains any ["Business","Personal"]
+    And match response.Data.Account[*].AccountSubType contains any ["ChargeCard","CreditCard","CurrentAccount","EMoney","Loan","Mortgage","PrePaidCard","Savings"]
 
   Scenario: US#15,Check Accounts details Api with detail permissions of SchemeName and Identification
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
@@ -77,11 +86,19 @@ Feature: Testing of Accounts Details api
     And header Authorization = "Bearer " + Token
     When method get
     Then status 200
-    And match response.Data.Account[*].Account[*].SecondaryIdentification contains ["#string"]
-    And match response.Data.Account[*].Account[*].Name contains ["#string"]
-    And match response.Data.Account[*].Account[*].SchemeName contains ["LEGACY"]
+    And match response.Data.Account[*].Account[*].SchemeName contains any ["UK.OBIE.BBAN", "UK.OBIE.IBAN", "UK.OBIE.PAN", "UK.OBIE.Paym", "UK.OBIE.SortCodeAccountNumber"]
     And match response.Data.Account[*].Account[*].Identification contains ["#string"]
+    And match response.Data.Account[0].Servicer ==
+    """
+  [
+  {
+    "Identification": "",
+    "SchemeName": ""
+  }
+]
+    """
 
+  @Sanity
   Scenario: US#15,Check Accounts details Api with Basic permissions
     * def result = call read('CreateAccessToken.feature@tag=BasicConsentAuthorizationToken')
     * def AccountURL =  read('testdata/URL.json')
@@ -140,11 +157,11 @@ Feature: Testing of Accounts Details api
     Then status 200
     * print response
     And match response.Data.Account[*].AccountId contains ["#string"]
-    And match response.Data.Account[*].Currency contains ["#string"]
-    And match response.Data.Account[*].AccountType contains [#string]
-    And match response.Data.Account[*].AccountSubType contains [#string]
+    And match response.Data.Account[*].Currency == ["#regex[A-Z]{3}"]
+    And match response.Data.Account[*].AccountType contains any ["Business","Personal"]
+    And match response.Data.Account[*].AccountSubType contains any ["Savings","CurrentAccount","ChargeCard,"CreditCard"]
 
-  Scenario: US#15,Check Accounts details Api with Basic permissions of SchemeName and Identification
+  Scenario: US#15,Check Accounts details Api response with Basic permissions
     * def result = call read('CreateAccessToken.feature@tag=BasicConsentAuthorizationToken')
     * def AccountURL =  read('testdata/URL.json')
     * def Token = result.Token

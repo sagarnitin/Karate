@@ -1,4 +1,4 @@
-@Consent
+@ConsentCreate
 Feature: Testing consent api
 
   Background:
@@ -16,7 +16,7 @@ Feature: Testing consent api
     * print response
     * def Token = response.access_token
 
-  @tag=ConsentCreated
+  @tag=ConsentCreated  @Sanity
   Scenario: US#02,Check with Mandatory authorisation
     * def ConsentHeaderAuth =  read('testdata/headers.json')
     * def ConsentURL =  read('testdata/URL.json')

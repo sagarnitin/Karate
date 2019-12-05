@@ -1,8 +1,11 @@
+@all
+
 Feature: Testing Accounts list api
 
   Background:
     * configure ssl = true
 
+  @Sanity
   Scenario: US#19,Check Accounts with detail permissions
    * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
     * def AccountURL =  read('testdata/URL.json')
@@ -41,6 +44,7 @@ Feature: Testing Accounts list api
     And header Content-Type = "application/json"
     When method get
     Then status 401
+    * print response
 
   Scenario: US#19,Check Accounts detail permissions with Currency,AccountType and AccountSubType
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
@@ -52,49 +56,10 @@ Feature: Testing Accounts list api
     And header Authorization = "Bearer " + Token
     When method get
     Then status 200
-    * print response
-    And match response.Data.Account[*].AccountId contains ["#string"]
-    And match response.Data.Account[*].Currency contains ["#string"]
-    And match response.Data.Account[*].AccountType contains ["Business"]
-    And match response ==
-    """
-    {
-    "Data": {
-        "Account": [
-            {
-                "AccountId": "#ignore",
-                "Status": "Enabled",
-                "StatusUpdateDateTime": "#ignore",
-                "Currency": "#string",
-                "AccountType": "#string",
-                "AccountSubType": "#string",
-                "Nickname": "",
-                "Account": [
-                    {
-                        "SecondaryIdentification": "",
-                        "Name": "#string",
-                        "Identification": "#string",
-                        "SchemeName": "#string"
-                    }
-                ],
-                "Servicer": [],
-                "Description": ""
-            }
-        ]
-    },
-    "Meta": {
-        "TotalPages": 1
-    },
-    "Links": {
-        "Self": "#ignore",
-        "First": "",
-        "Prev": "",
-        "Next": "",
-        "Last": ""
-    }
-}
-
-    """
+    And match response.Data.Account[0].AccountId contains "#string"
+    And match response.Data.Account[0].Currency == "#regex[A-Z]{3}"
+    And match response.Data.Account[*].AccountType contains any ["Business","Personal"]
+    And match response.Data.Account[*].AccountSubType contains any ["ChargeCard","CreditCard","CurrentAccount","EMoney","Loan","Mortgage","PrePaidCard","Savings"]
 
   Scenario: US#19,Check Accounts detail permissions with SchemeName and Identification
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
@@ -106,11 +71,17 @@ Feature: Testing Accounts list api
     And header Authorization = "Bearer " + Token
     When method get
     Then status 200
-    * print response
-    And match response.Data.Account[*].Account[*].SecondaryIdentification contains ["#string"]
-    And match response.Data.Account[*].Account[*].Name contains ["#string"]
-    And match response.Data.Account[*].Account[*].SchemeName contains ["LEGACY"]
+    And match response.Data.Account[*].Account[*].SchemeName contains any ["UK.OBIE.BBAN", "UK.OBIE.IBAN", "UK.OBIE.PAN", "UK.OBIE.Paym", "UK.OBIE.SortCodeAccountNumber"]
     And match response.Data.Account[*].Account[*].Identification contains ["#string"]
+    And match response.Data.Account[0].Servicer ==
+    """
+  [
+  {
+    "Identification": "",
+    "SchemeName": ""
+  }
+]
+    """
 
   Scenario Outline: US#19,check <name> x-fapi-financial-id for detail Permissions
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
@@ -131,6 +102,7 @@ Feature: Testing Accounts list api
       |open-bankghd       |with invalid charaters                    |
       |                   |   without                                |
 
+  @Sanity
   Scenario: US#19,Check Accounts with Basic permissions
     * def result = call read('CreateAccessToken.feature@tag=BasicConsentAuthorizationToken')
     * def AccountURL =  read('testdata/URL.json')
@@ -190,36 +162,8 @@ Feature: Testing Accounts list api
     When method get
     Then status 200
     * print response
-    And match response.Data.Account[*].AccountId contains ["#string"]
-    And match response.Data.Account[*].Currency contains ["#string"]
-    And match response.Data.Account[*].AccountType contains ["#string"]
-    And match response ==
-    """
-    {
-    "Data": {
-        "Account": [
-            {
-                "AccountId": "#string",
-                "Status": "Enabled",
-                "StatusUpdateDateTime": "#string",
-                "Currency": "#string",
-                "AccountType": "#string",
-                "AccountSubType": "#string",
-                "Nickname": "",
-                "Description": ""
-            }
-        ]
-    },
-    "Meta": {
-        "TotalPages": 1
-    },
-    "Links": {
-        "Self": "#string",
-        "First": "",
-        "Prev": "",
-        "Next": "",
-        "Last": ""
-    }
-}
-    """
+    And match response.Data.Account[0].AccountId == "#string"
+    And match response.Data.Account[0].Currency == "#regex[A-Z]{3}"
+    And match response.Data.Account[*].AccountType contains any ["Business","Personal"]
+    And match response.Data.Account[*].AccountSubType contains any ["Savings","CurrentAccount","ChargeCard,"CreditCard"]
 

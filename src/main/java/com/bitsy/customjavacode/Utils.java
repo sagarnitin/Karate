@@ -45,7 +45,7 @@ public class Utils {
         driver.findElement(By.xpath("//*[@id='password']")).sendKeys("admin");
         WebElement searchIcon = driver.findElement(By.xpath("//*[@type='submit']"));
         searchIcon.submit();
-        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
         WebElement SelectAccount = driver.findElement(By.xpath("//*[(@id='dropdownCheck') and @value='"+AccountNo+"']"));
         SelectAccount.click();
         driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
@@ -60,6 +60,16 @@ public class Utils {
         System.out.println(arrOfStr[1]);
         driver.close();
         return arrOfStr[1];
+    }
+
+    public static String CreditDebitIndicator(int Amount) {
+        String  Indicator;
+      if(Amount >=0){
+          Indicator= "CREDIT";
+      }else{
+          Indicator= "DEBIT";
+      }
+      return Indicator;
     }
 
 }

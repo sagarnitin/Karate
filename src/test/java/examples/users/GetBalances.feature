@@ -1,8 +1,11 @@
+@AccountGetBalances @all
 Feature: Testing of Get Balances api
 
   Background:
     * configure ssl = true
+    * def Utils = Java.type('com.bitsy.customjavacode.Utils')
 
+  @Sanity
   Scenario: US#21,Check Balances Api with Mandatory Authorisation
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
     * def BalancesURL =  read('testdata/URL.json')
@@ -13,6 +16,7 @@ Feature: Testing of Get Balances api
     And header Authorization = "Bearer " + Token
     When method get
     Then status 200
+    * print response
     And match response.Data.Balance[*].AccountId == ['13315']
 
   Scenario Outline: US#21,check Balances Api <name> Authorization
@@ -50,6 +54,7 @@ Feature: Testing of Get Balances api
     And header Authorization = "Bearer " + Token
     When method get
     Then status 400
+    * print response
 
     Examples:
       |   AccountId         |    name                      |
@@ -67,6 +72,47 @@ Feature: Testing of Get Balances api
     When method get
     Then status 404
 
+  Scenario: US#21,Check Balances Api response AccountId, type and DateTime
+    * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
+    * def BalancesURL =  read('testdata/URL.json')
+    * def Token = result.Token
+    * print Token
+    Given url BalancesURL.GetBalancesUrl
+    Then path "13315/balances"
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    And assert responseStatus == '200'
+    And match response.Data.Balance[0].AccountId == '13315'
+    And match response.Data.Balance[*].Type contains any ["ClosingAvailable","ClosingBooked","ClosingCleared","Expected","ForwardAvailable","Information","InterimAvailable","InterimBooked","InterimCleared","OpeningAvailable","OpeningBooked","OpeningCleared","PreviouslyClosedBooked"]
+    And match response.Data.Balance[0].DateTime == "#string"
+
+  Scenario: US#21,Check Balances Api response Amount and Currency
+    * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
+    * def BalancesURL =  read('testdata/URL.json')
+    * def Token = result.Token
+    * print Token
+    Given url BalancesURL.GetBalancesUrl
+    Then path "13315/balances"
+    And header Authorization = "Bearer " + Token
+    When method get
+    Then status 200
+    And assert responseStatus == '200'
+    And match response.Data.Balance[*].AccountId == ['13315']
+    And match response.Data.Balance[*].Type == ["OpeningCleared"]
+    And match response.Data.Balance[0].CreditLine[0].Amount.Amount == ""
+    And match response.Data.Balance[0].CreditLine[0] ==
+    """
+   {
+     "Included": "#boolean",
+      "Amount": {
+      "Amount": "",
+      "Currency": ""
+    },
+      "Type": ""
+    }
+    """
+
   Scenario: US#21,Check Balances Api with CreditDebitIndicator
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')
     * def BalancesURL =  read('testdata/URL.json')
@@ -78,7 +124,6 @@ Feature: Testing of Get Balances api
     When method get
     Then status 200
     And assert responseStatus == '200'
-    And assert response.Data.Balance[0].Amount.Amount >= ['0']
-    * def CreditDebitIndicator =  response.Data.Balance[0].CreditDebitIndicator
-    Then match CreditDebitIndicator == "CREDIT"
-
+    * def Amount = response.Data.Balance[0].Amount.Amount
+    And def Indicator = Utils.CreditDebitIndicator(Amount)
+    And match response.Data.Balance[0].CreditDebitIndicator == Indicator
