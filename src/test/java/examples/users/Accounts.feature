@@ -1,4 +1,4 @@
-@all
+@AccountList @all
 
 Feature: Testing Accounts list api
 

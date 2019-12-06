@@ -1,4 +1,4 @@
-@CreateAccessTokenAndAuthorization
+@CreateAccessTokenAndAuthorization @NotRun
 
 Feature: Create access token for accounts,balance and transactions
 

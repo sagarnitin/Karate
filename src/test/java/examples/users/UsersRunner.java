@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 //import static org.junit.Assert.*;
 
-@KarateOptions(tags = {})
+@KarateOptions(tags = {"~@NotRun"})
 class UsersRunner {
 
 //    @Karate.Test

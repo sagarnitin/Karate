@@ -32,6 +32,8 @@ Feature: Testing consent api
     And match Status == 'AwaitingAuthorisation'
     * def consentId = response.Data.ConsentId
     * def permission = response.Data.Permissions
+    * def AutoToken = Token
+    * print AutoToken
     And match permission contains ["ReadAccountsDetail","ReadBalances"]
 
   Scenario Outline: US#02,check <name> Authorization

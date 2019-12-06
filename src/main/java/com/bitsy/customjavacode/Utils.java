@@ -31,8 +31,8 @@ public class Utils {
         if(System.getProperty("os.name").toString().contains("Mac")){
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//main//java//com//bitsy//customjavacode//chromedriver");
         }else{
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//main//java//com//bitsy//customjavacode//chromedriver.exe");
-//            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//main//java//com//bitsy//customjavacode//chromedriver");
+//            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//main//java//com//bitsy//customjavacode//chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//main//java//com//bitsy//customjavacode//chromedriver");
         }
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");

@@ -1,3 +1,5 @@
+@NotRun
+
 Feature: Testing UpdateConsent api
 
   Background:
@@ -8,6 +10,7 @@ Feature: Testing UpdateConsent api
   @tag=ConsentAuthorised
   Scenario: US#10,Check with Mandatory authorisation to Authorise the consent
     * def result = call read('CreateConsent.feature@tag=ConsentCreated')
+    * def AuToken = result.AutoToken
     * def consentId = result.consentId
     * print consentId
     * set jsonRequestObjectToBeEncoded.consentId = consentId
