@@ -71,6 +71,7 @@ Feature: Testing of Get Balances api
     And header Authorization = "Bearer " + Token
     When method get
     Then status 404
+    * print response
 
   Scenario: US#21,Check Balances Api response AccountId, type and DateTime
     * def result = call read('CreateAccessToken.feature@tag=AuthorizationToken')

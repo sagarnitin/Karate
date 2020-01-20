@@ -1,7 +1,31 @@
 {
-  "sub"      : "1234567890",
-  "name"     : "John Doe",
-  "iat"      : 1516239022,
-  "consentId": "#consentId",
-  "clientId" : "RZbFa3EfrMUMQuiCsJit5U7fpzca"
+  "aud": "https://api.alphanbank.com",
+  "iss": "s6BhdRkqt3",
+  "response_type": "code id_token",
+  "client_id": "RZbFa3EfrMUMQuiCsJit5U7fpzca",
+  "redirect_uri": "https://api.mytpp.com/cb",
+  "scope": "openid payments accounts",
+  "state": "af0ifjsldkj",
+  "nonce": "n-0S6_WzA2Mj",
+  "max_age": 86400,
+  "claims": {
+    "userinfo": {
+      "openbanking_intent_id": {
+        "value": "#consentId",
+        "essential": true
+      }
+    },
+    "id_token": {
+      "openbanking_intent_id": {
+        "value": "#consentId",
+        "essential": true
+      },
+      "acr": {
+        "essential": true,
+        "values": ["urn:openbanking:psd2:sca",
+          "urn:openbanking:psd2:ca"
+        ]
+      }
+    }
+  }
 }

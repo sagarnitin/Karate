@@ -12,13 +12,14 @@ Feature: Create access token for accounts,balance and transactions
     * def result = call read('CreateConsent.feature@tag=ConsentCreated')
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
-    When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
+      When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'
@@ -29,7 +30,7 @@ Feature: Create access token for accounts,balance and transactions
     * form field redirect_uri = "http://localhost:3000"
     * form field code = ConsentAuthorizedCode
     * header Authorization = TokenCreationData.TokenAuthorization
-    *  header Content-Type = TokenCreationData['Content-Type']
+    * header Content-Type = TokenCreationData['Content-Type']
     When method post
     And status 200
     * def Token = response.access_token
@@ -41,14 +42,15 @@ Feature: Create access token for accounts,balance and transactions
     * print result
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
     And print result
     When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'
@@ -71,14 +73,15 @@ Feature: Create access token for accounts,balance and transactions
     * print result
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
     And print result
     When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'
@@ -101,14 +104,15 @@ Feature: Create access token for accounts,balance and transactions
     * print result
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
     And print result
     When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'
@@ -131,14 +135,15 @@ Feature: Create access token for accounts,balance and transactions
     * print result
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
     And print result
     When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'
@@ -161,14 +166,15 @@ Feature: Create access token for accounts,balance and transactions
     * print result
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
     And print result
     When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'
@@ -191,14 +197,15 @@ Feature: Create access token for accounts,balance and transactions
     * print result
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
     And print result
     When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'
@@ -221,14 +228,15 @@ Feature: Create access token for accounts,balance and transactions
     * print result
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
     And print result
     When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'
@@ -251,14 +259,15 @@ Feature: Create access token for accounts,balance and transactions
     * print result
     * def consentId = result.consentId
     * print consentId
-    * set jsonRequestObjectToBeEncoded.consentId = consentId
+    * set jsonRequestObjectToBeEncoded.claims.userinfo.openbanking_intent_id.value = consentId
+    * set jsonRequestObjectToBeEncoded.claims.id_token.openbanking_intent_id.value = consentId
     * string requestObjToBeEncodedAsString = jsonRequestObjectToBeEncoded
     * print requestObjToBeEncodedAsString
     Given def result = Utils.getBase64EncodedString(requestObjToBeEncodedAsString)
     And print result
     When def ws2 = "https://bacb-apim.uksouth.cloudapp.azure.com/authorize?response_type=code&client_id=RZbFa3EfrMUMQuiCsJit5U7fpzca&redirect_uri=http://localhost:3000&request_object="+result
     * print ws2
-    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,13315)
+    And def ConsentAuthorizedCode = Utils.launchChromeBrowser(ws2,100260,13315)
     And print ConsentAuthorizedCode
     Given url 'https://bacb-apim.uksouth.cloudapp.azure.com'
     * path '/token'

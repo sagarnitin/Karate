@@ -28,6 +28,7 @@ Feature: Testing consent api
     And request read('testdata/cons.json')
     When method post
     Then status 201
+    * print response
     * def Status = response.Data.Status
     And match Status == 'AwaitingAuthorisation'
     * def consentId = response.Data.ConsentId
@@ -45,6 +46,7 @@ Feature: Testing consent api
     And request read('testdata/cons.json')
     When method post
     Then status 401
+    * print response
 
     Examples:
       | Authorization          | name                           |
@@ -61,6 +63,7 @@ Feature: Testing consent api
     And request read('testdata/cons.json')
     When method post
     Then status 401
+   * print response
 
   Scenario Outline: US#02, check <name> Content-Type
     * def ConsentURL =  read('testdata/URL.json')
@@ -71,7 +74,7 @@ Feature: Testing consent api
     And header x-fapi-financial-id = "open-bank"
     And request read('testdata/cons.json')
     When method post
-    Then status 400
+    Then status 415
 
     Examples:
       | Content-Type | name                           |
@@ -88,7 +91,7 @@ Feature: Testing consent api
     And header x-fapi-financial-id = "open-bank"
     And request read('testdata/cons.json')
     When method post
-    Then status 400
+    Then status 415
 
   Scenario Outline: US#02, check <name> x-fapi-financial-id
     * def ConsentURL =  read('testdata/URL.json')
@@ -104,9 +107,6 @@ Feature: Testing consent api
     Examples:
       | x-fapi-financial-id | name                                       |
       | open-bank344        | with invalid numebrs                       |
-      | open-bank$%^sjjd    | with invalid special charaters             |
-      | open-bankghd        | with invalid charaters                     |
-      | $%^^hhdopen-bank56  | with invalid special charaters and numbers |
       | 56738djjdndjd       | with invalid alphanumaric charaters        |
       |                     | without                                    |
 
@@ -129,26 +129,6 @@ Feature: Testing consent api
       | ##$%%^      | with invalid special charaters |
       |             | without                        |
 
-  Scenario: US#02,check with invalid HTTP method
-    Given url 'httppps://bacb-bitsy.uksouth.cloudapp.azure.com/account-access-consents'
-    * def ConsentHeaderAuth =  read('testdata/headers.json')
-    And header Authorization = "Bearer " + Token
-    And header Content-Type = "application/json"
-    And header x-fapi-financial-id = "open-bank"
-    And request read('testdata/cons.json')
-    When method post
-    Then status 400
-
-  Scenario: US#02,check without HTTP method
-    Given url '//bacb-bitsy.uksouth.cloudapp.azure.com/account-access-consents'
-    * def ConsentHeaderAuth =  read('testdata/headers.json')
-    And header Authorization = "Bearer " + Token
-    And header Content-Type = "application/json"
-    And header x-fapi-financial-id = "open-bank"
-    And request read('testdata/cons.json')
-    When method post
-    Then status 400
-
   Scenario Outline: US#02, check with invalid header parameters
     * def ConsentURL =  read('testdata/URL.json')
     Given url ConsentURL.CreateConsentUrl
@@ -163,7 +143,6 @@ Feature: Testing consent api
     Examples:
       | Authorization            | Content-Type | x-client-id | x-fapi-financial-id |
       | Basic YWR6373aW4673gdgjd | application  | hjdjde      | open-bankghd        |
-
 
   Scenario: US#02,Check Permissions and Risk
     * def ConsentURL =  read('testdata/URL.json')
@@ -195,6 +174,29 @@ Feature: Testing consent api
     When method post
     Then status 400
 
+  Scenario: US#02,Check with invalid risk
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadAccountsDetail","ReadBalances","ReadTransactionsDetail"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"iRisk": {"description":"fdffds"}}
+    When method post
+    Then status 400
+    * print response
+
+  Scenario: US#02,Check with invalid ISO format ExpirationDateTime
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadAccountsDetail","ReadBalances","ReadTransactionsDetail"],"ExpirationDateTime": "03-12-2017","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
+    When method post
+    Then status 400
+
   Scenario: US#02,Check without ExpirationDateTime
     * def ConsentURL =  read('testdata/URL.json')
     * def ConsentHeaderAuth =  read('testdata/headers.json')
@@ -205,6 +207,18 @@ Feature: Testing consent api
     And request {"Data": {"Permissions": ["ReadAccountsDetail","ReadBalances","ReadTransactionsDetail"],"TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {}}
     When method post
     Then status 201
+    * print response
+
+  Scenario: US#02,Check with invalid ISO format TransactionFromDateTime
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadAccountsDetail","ReadBalances","ReadTransactionsDetail"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
+    When method post
+    Then status 400
 
   @tag=ConsentWithOutTransactionFromDateTime
   Scenario: US#02,Check without TransactionFromDateTime
@@ -219,6 +233,17 @@ Feature: Testing consent api
     Then status 201
     * print response
     * def consentId = response.Data.ConsentId
+
+  Scenario: US#02,Check with invalid ISO format TransactionToDateTime
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadAccountsDetail","ReadBalances","ReadTransactionsDetail"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03"},"Risk": {"description":"fdffds"}}
+    When method post
+    Then status 400
 
   @tag=ConsentWithOutTransactionToDateTime
   Scenario: US#02,Check without TransactionToDateTime
@@ -277,6 +302,19 @@ Feature: Testing consent api
     * def permission = response.Data.Permissions
     And match permission == ["ReadAccountsDetail"]
 
+  @tag=ConsentWithReadBalances
+  Scenario: US#02,Check  create Consent only with ReadBalances permissions
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    * print Authorization
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadBalances"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
+    When method post
+    Then status 400
+
   @tag=ConsentWithBasicPermissions
   Scenario: US#02,Check  create Consent only with ReadAccountsBasic permissions
     * def ConsentURL =  read('testdata/URL.json')
@@ -304,14 +342,14 @@ Feature: Testing consent api
     And header Authorization = "Bearer " + Token
     And header Content-Type = "application/json"
     And header x-fapi-financial-id = "open-bank"
-    And request {"Data": {"Permissions": ["ReadTransactionsBasic"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
+    And request {"Data": {"Permissions": ["ReadTransactionsBasic","ReadAccountsBasic"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
     When method post
     Then status 201
     And assert responseStatus == '201'
     * def Status = response.Data.Status
     And match Status == 'AwaitingAuthorisation'
     * def permission = response.Data.Permissions
-    And match permission == ["ReadTransactionsBasic"]
+    And match permission == ["ReadTransactionsBasic","ReadAccountsBasic"]
     * print response
     * def consentId = response.Data.ConsentId
 
@@ -334,7 +372,6 @@ Feature: Testing consent api
     * print response
     * def consentId = response.Data.ConsentId
 
-  @tag=ReadTransactionsCredits
   Scenario: US#02,Check to Create Consent only with ReadTransactionsCredits permissions
     * def ConsentURL =  read('testdata/URL.json')
     * def ConsentHeaderAuth =  read('testdata/headers.json')
@@ -344,16 +381,46 @@ Feature: Testing consent api
     And header x-fapi-financial-id = "open-bank"
     And request {"Data": {"Permissions": ["ReadTransactionsCredits"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
     When method post
+    Then status 400
+
+  @tag=ReadTransactionsCreditsWithBasic
+  Scenario: US#02,Check to Create Consent with ReadTransactionsCredits and ReadTransactionsBasic permissions
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadTransactionsCredits","ReadTransactionsBasic"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
+    When method post
     Then status 201
     And assert responseStatus == '201'
     * def Status = response.Data.Status
     And match Status == 'AwaitingAuthorisation'
     * def permission = response.Data.Permissions
-    And match permission == ["ReadTransactionsCredits"]
+    And match permission == ["ReadTransactionsCredits","ReadTransactionsBasic"]
     * print response
     * def consentId = response.Data.ConsentId
 
-  @tag=ReadTransactionsDebits
+  @tag=ReadTransactionsCredits
+  Scenario: US#02,Check to Create Consent with ReadTransactionsCredits and ReadTransactionsDetail permissions
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadTransactionsCredits","ReadTransactionsDetail"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
+    When method post
+    Then status 201
+    And assert responseStatus == '201'
+    * def Status = response.Data.Status
+    And match Status == 'AwaitingAuthorisation'
+    * def permission = response.Data.Permissions
+    And match permission == ["ReadTransactionsCredits","ReadTransactionsDetail"]
+    * print response
+    * def consentId = response.Data.ConsentId
+
   Scenario: US#02,Check to Create Consent only with ReadTransactionsDebits permissions
     * def ConsentURL =  read('testdata/URL.json')
     * def ConsentHeaderAuth =  read('testdata/headers.json')
@@ -363,12 +430,42 @@ Feature: Testing consent api
     And header x-fapi-financial-id = "open-bank"
     And request {"Data": {"Permissions": ["ReadTransactionsDebits"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
     When method post
+    Then status 400
+
+  @tag=ReadTransactionsDebits
+  Scenario: US#02,Check to Create Consent with ReadTransactionsDebits and ReadTransactionsDetail permissions
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadTransactionsDebits","ReadTransactionsDetail"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
+    When method post
     Then status 201
     And assert responseStatus == '201'
     * def Status = response.Data.Status
     And match Status == 'AwaitingAuthorisation'
     * def permission = response.Data.Permissions
-    And match permission == ["ReadTransactionsDebits"]
+    And match permission == ["ReadTransactionsDebits","ReadTransactionsDetail"]
     * print response
     * def consentId = response.Data.ConsentId
 
+  @tag=ReadTransactionsDebitsWithBasic
+  Scenario: US#02,Check to Create Consent with ReadTransactionsDebits and ReadTransactionsBasic permissions
+    * def ConsentURL =  read('testdata/URL.json')
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    Given url ConsentURL.CreateConsentUrl
+    And header Authorization = "Bearer " + Token
+    And header Content-Type = "application/json"
+    And header x-fapi-financial-id = "open-bank"
+    And request {"Data": {"Permissions": ["ReadTransactionsDebits","ReadTransactionsBasic"],"ExpirationDateTime": "2020-01-01T00:00:00+00:00","TransactionFromDateTime": "2017-05-03T00:00:00+00:00","TransactionToDateTime": "2017-12-03T00:00:00+00:00"},"Risk": {"description":"fdffds"}}
+    When method post
+    Then status 201
+    And assert responseStatus == '201'
+    * def Status = response.Data.Status
+    And match Status == 'AwaitingAuthorisation'
+    * def permission = response.Data.Permissions
+    And match permission == ["ReadTransactionsDebits","ReadTransactionsBasic"]
+    * print response
+    * def consentId = response.Data.ConsentId

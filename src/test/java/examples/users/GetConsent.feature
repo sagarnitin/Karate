@@ -150,7 +150,7 @@ Feature: Testing GetConsent api
     And header Authorization = "Bearer " + Token
     And header x-fapi-financial-id = "open-bank"
     When method get
-    Then status 404
+    Then status 400
 
   Scenario: US#08,Check with Mandatory authorisation to get the Authorised consents
     * def result = call read('WebUpdateConsent.feature@tag=ConsentAuthorised')
@@ -298,7 +298,7 @@ Feature: Testing GetConsent api
     Then status 404
 
   Scenario: US#08,Check with Mandatory authorisation to get the Rejected consents
-    * def result = call read('UpdateConsent.feature@tag=ConsentRejected')
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
     * def consentId = result.consentId
     * def GetURL =  read('testdata/URL.json')
     * def Token = result.Token
@@ -329,29 +329,51 @@ Feature: Testing GetConsent api
         ]
     },
     "Risk": {
-        "description": "#ignore"
+        "Description": null
     },
     "Meta": {
         "TotalPages": 1
     },
     "Links": {
-        "Self": "#ignore"
+        "Self": "#ignore",
+        "First": null,
+        "Prev": null,
+        "Next": null,
+        "Last": null
     }
 }
 """
 
+  Scenario Outline: US#08,check <name> Authorization to Reject the consents
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
+    * def consentId = result.consentId
+    * def GetURL =  read('testdata/URL.json')
+    Given url GetURL.GetConsentUrl
+    And path consentId
+    And headers { Authorization: '<Authorization>' }
+    And header x-fapi-financial-id = "open-bank"
+    When method get
+    Then status 401
+
+    Examples:
+      |Authorization         |    name                      |
+      |Basic YWRtaW46YWdhggtw|with invalid                  |
+      |   Basic $%^^##@@     |with invalid special charaters|
+      |   Basic2667393       |with invalid                  |
+      |                      |   with Null                  |
+
   Scenario: US#08,check Without Authorization to get the Rejected consents
-    * def result = call read('UpdateConsent.feature@tag=ConsentRejected')
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
     * def consentId = result.consentId
     * def GetURL =  read('testdata/URL.json')
     Given url GetURL.GetConsentUrl
     And path consentId
     And header x-fapi-financial-id = "open-bank"
     When method get
-    Then status 400
+    Then status 401
 
   Scenario Outline: US#08,check <name> Content-Type to get the Rejected consents
-    * def result = call read('UpdateConsent.feature@tag=ConsentRejected')
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
     * def consentId = result.consentId
     * def GetURL =  read('testdata/URL.json')
     * def Token = result.Token
@@ -359,7 +381,6 @@ Feature: Testing GetConsent api
     And path consentId
     * def ConsentHeaderAuth =  read('testdata/headers.json')
     And header Authorization = "Bearer " + Token
-    And header x-fapi-financial-id = "open-bank"
     And headers { Content-Type: '<Content-Type>' }
     When method get
     Then status 200
@@ -373,7 +394,7 @@ Feature: Testing GetConsent api
       |            |   with null                  |
 
   Scenario: US#08,check without Content-Type to get the Rejected consents
-    * def result = call read('UpdateConsent.feature@tag=ConsentRejected')
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
     * def consentId = result.consentId
     * def GetURL =  read('testdata/URL.json')
     * def Token = result.Token
@@ -381,14 +402,13 @@ Feature: Testing GetConsent api
     And path consentId
     * def ConsentHeaderAuth =  read('testdata/headers.json')
     And header Authorization = "Bearer " + Token
-    And header x-fapi-financial-id = "open-bank"
     When method get
     Then status 200
     * def ConsentAwaitingAuthorisationStatus = response.Data.Status
     And match ConsentAwaitingAuthorisationStatus == 'Rejected'
 
   Scenario Outline: US#08,check <name> x-fapi-financial-id to get the Rejected consents
-    * def result = call read('UpdateConsent.feature@tag=ConsentRejected')
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
     * def consentId = result.consentId
     * def GetURL =  read('testdata/URL.json')
     * def Token = result.Token
@@ -406,12 +426,10 @@ Feature: Testing GetConsent api
       |x-fapi-financial-id|    name                                  |
       |  open-bank344     |with invalid numebrs                      |
       |open-bank$%^sjjd   |with invalid special charaters            |
-      |open-bankghd       |with invalid charaters                    |
-      |$%^^hhdopen-bank56 |with invalid special charaters and numbers|
       |                   |   without                                |
 
   Scenario: US#08,check without x-fapi-financial-id to get the Rejected consents
-    * def result = call read('UpdateConsent.feature@tag=ConsentRejected')
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
     * def consentId = result.consentId
     * def GetURL =  read('testdata/URL.json')
     * def Token = result.Token
@@ -424,27 +442,34 @@ Feature: Testing GetConsent api
     * def ConsentAwaitingAuthorisationStatus = response.Data.Status
     And match ConsentAwaitingAuthorisationStatus == 'Rejected'
 
-  Scenario Outline: US#08,Check with <name> ConsentId to get the Rejected consents
-    * def result = call read('UpdateConsent.feature@tag=ConsentRejected')
+  Scenario: US#08,Check with Invalid ConsentId to get the Rejected consents
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
     * def consentId = result.consentId
     * def GetURL =  read('testdata/URL.json')
     * def Token = result.Token
     Given url GetURL.GetConsentUrl
-    And path {consentId: '<consentId>'}
+    And path "5db153a3600b2700016746"
     * def ConsentHeaderAuth =  read('testdata/headers.json')
     And header Authorization = "Bearer " + Token
     And header x-fapi-financial-id = "open-bank"
     When method get
     Then status 400
 
-    Examples:
-      |      consentId         | name  |
-      |5db153a3600b2700016746  |invalid|
-      |hhiwgfsruwieoodlnxrttey |invalid|
-      | 6747482778397432414368 |invalid|
+  Scenario: US#08,Check with Invalid characters ConsentId to get the Rejected consents
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
+    * def consentId = result.consentId
+    * def GetURL =  read('testdata/URL.json')
+    * def Token = result.Token
+    Given url GetURL.GetConsentUrl
+    And path "hhiwgfsruwieoodlnxrttey "
+    * def ConsentHeaderAuth =  read('testdata/headers.json')
+    And header Authorization = "Bearer " + Token
+    And header x-fapi-financial-id = "open-bank"
+    When method get
+    Then status 400
 
   Scenario: US#08,Check without ConsentId to get the Rejected consents
-    * def result = call read('UpdateConsent.feature@tag=ConsentRejected')
+    * def result = call read('WebUpdateConsent.feature@tag=ConsentRejected')
     * def consentId = result.consentId
     * def GetURL =  read('testdata/URL.json')
     * def Token = result.Token

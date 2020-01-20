@@ -12,31 +12,21 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
-//import static org.junit.Assert.*;
+//import static org.junit.jupiter.api.Assertions.*;
+//import org.junit.jupiter.api.Test;
 
-@KarateOptions(tags = {"~@NotRun"})
+@KarateOptions(tags = {"@Sanity"})
 class UsersRunner {
-
-//    @Karate.Test
-//    Karate testUsers() {
-//        return new Karate().feature("CreateConsent").relativeTo(getClass());
-//    }
-//    @Test
-//         void testParallel(){
-//        String karateOutputPath = "target/surefire-reports";
-//        generateReport(karateOutputPath);
-//    }
 
     @Test
     public void testParallel() {
         String karateOutputPath = "target/surefire-reports";
         Results results = Runner.parallel(getClass(), 1,karateOutputPath);
         generateReport(results.getReportDir());
-//        assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
     }
 
 public static void generateReport(String karateOutputPath ) {
-//    String karateOutputPath = "target/surefire-reports";
+
     Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] {"json"}, true);
     ArrayList<String> jsonPaths = new ArrayList<>(jsonFiles.size());
     for( File file: jsonFiles)

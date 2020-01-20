@@ -1,6 +1,5 @@
 {
   "CreateConsentUrl"           : "https://bacb-apim.uksouth.cloudapp.azure.com/consent-apis/open-banking/v1.0.0/aisp/account-access-consents",
-  "UpdateConsentUrl"           : "https://bacb-apim.uksouth.cloudapp.azure.com/consent-apis/open-banking/v1.0.0/aisp/account-access-consents/account-access-consents/internal/",
   "GetConsentUrl"              : "https://bacb-apim.uksouth.cloudapp.azure.com/consent-apis/open-banking/v1.0.0/aisp/account-access-consents/",
   "RevokeConsentUrl"           : "https://bacb-apim.uksouth.cloudapp.azure.com/consent-apis/open-banking/v1.0.0/aisp/account-access-consents/",
   "GetAccountListUrl"          : "https://bacb-apim.uksouth.cloudapp.azure.com/account-apis/open-banking/v1.0.0/aisp/accounts",

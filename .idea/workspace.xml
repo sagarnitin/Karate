@@ -2,21 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db1971b0-50be-471f-ac3f-c47439fa3cfc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/chromedriver" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/CreateAccessToken.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/RevokeConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/RevokeConsent.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/Transaction.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/UsersRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/UsersRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/WebUpdateConsent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/WebUpdateConsent.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/testdata/Base64Encoder.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/testdata/Base64Encoder.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/examples/users/testdata/URL.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/examples/users/testdata/URL.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="176" />
@@ -38,6 +42,9 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1Sp6NAtrB6vtgfvE2UD8AT7bDI7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,7 +58,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/bitsy/customjavacode" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Bacb" />
     <property name="nodejs.cucumber.cucumber_node_package_dir" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -67,16 +74,14 @@
       <recent name="C:\Users\raghavendran.MAVERICSYSTEMS\IdeaProjects\Bacb\src\test\java\examples\users\testdata" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UsersRunner">
-    <configuration name="Scenario: US#08,Check with &lt;name&gt; ConsentId to get the Authorised consents" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber java.Scenario: US#19,check without Authorization for Detail permissions">
+    <configuration name="Feature: CreateConsent" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" />
-      <option name="GLUE" value="com.intuit.karate" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/CreateConsent.feature" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#08\,Check with .* ConsentId to get the Authorised consents$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#08\,Check with .* ConsentId to get the Authorised consents$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#08,Check with &lt;name&gt; ConsentId to get the Authorised consents" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
+      <option name="SUGGESTED_NAME" value="Feature: CreateConsent" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -87,15 +92,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: US#08,Check without ConsentId to get the Authorised consents" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: US#08,Check with Invalid characters ConsentId to get the Rejected consents" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" />
       <option name="GLUE" value="com.intuit.karate" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#08\,Check without ConsentId to get the Authorised consents$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#08\,Check without ConsentId to get the Authorised consents$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#08,Check without ConsentId to get the Authorised consents" />
+      <option name="NAME_FILTER" value="^US\#08\,Check with Invalid characters ConsentId to get the Rejected consents$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#08\,Check with Invalid characters ConsentId to get the Rejected consents$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#08,Check with Invalid characters ConsentId to get the Rejected consents" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -106,34 +111,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: US#08,check &lt;name&gt; x-fapi-financial-id to get the Authorised consents" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: US#19,check without Authorization for Detail permissions" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/GetConsent.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/Accounts.feature" />
       <option name="GLUE" value="com.intuit.karate" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#08\,check .* x\-fapi\-financial\-id to get the Authorised consents$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#08\,check .* x\-fapi\-financial\-id to get the Authorised consents$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#08,check &lt;name&gt; x-fapi-financial-id to get the Authorised consents" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: US#21,Check Balances Api with CreditDebitIndicator" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/examples/users/GetBalances.feature" />
-      <option name="GLUE" value="com.intuit.karate" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <module name="Bacb" />
-      <option name="NAME_FILTER" value="^US\#21\,Check Balances Api with CreditDebitIndicator$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#21\,Check Balances Api with CreditDebitIndicator$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: US#21,Check Balances Api with CreditDebitIndicator" />
+      <option name="NAME_FILTER" value="^US\#19\,check without Authorization for Detail permissions$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^US\#19\,check without Authorization for Detail permissions$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: US#19,check without Authorization for Detail permissions" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -159,20 +145,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UsersRunner.testParallel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bacb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="examples.users.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="examples.users" />
+      <option name="MAIN_CLASS_NAME" value="examples.users.UsersRunner" />
+      <option name="METHOD_NAME" value="testParallel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Cucumber java.Scenario: US#08,check &lt;name&gt; x-fapi-financial-id to get the Authorised consents" />
-      <item itemvalue="Cucumber java.Scenario: US#08,Check with &lt;name&gt; ConsentId to get the Authorised consents" />
-      <item itemvalue="Cucumber java.Scenario: US#08,Check without ConsentId to get the Authorised consents" />
-      <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api with CreditDebitIndicator" />
+      <item itemvalue="Cucumber java.Scenario: US#08,Check with Invalid characters ConsentId to get the Rejected consents" />
+      <item itemvalue="Cucumber java.Feature: CreateConsent" />
+      <item itemvalue="Cucumber java.Scenario: US#19,check without Authorization for Detail permissions" />
       <item itemvalue="JUnit.UsersRunner" />
+      <item itemvalue="JUnit.UsersRunner.testParallel" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber java.Scenario: US#19,check without Authorization for Detail permissions" />
+        <item itemvalue="Cucumber java.Feature: CreateConsent" />
+        <item itemvalue="JUnit.UsersRunner.testParallel" />
         <item itemvalue="JUnit.UsersRunner" />
-        <item itemvalue="Cucumber java.Scenario: US#21,Check Balances Api with CreditDebitIndicator" />
-        <item itemvalue="Cucumber java.Scenario: US#08,Check without ConsentId to get the Authorised consents" />
-        <item itemvalue="Cucumber java.Scenario: US#08,Check with &lt;name&gt; ConsentId to get the Authorised consents" />
-        <item itemvalue="Cucumber java.Scenario: US#08,check &lt;name&gt; x-fapi-financial-id to get the Authorised consents" />
+        <item itemvalue="Cucumber java.Scenario: US#08,Check with Invalid characters ConsentId to get the Rejected consents" />
       </list>
     </recent_temporary>
   </component>
@@ -251,22 +253,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="392" y="150" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1575544690000" />
-    <state width="1237" height="200" key="GridCell.Tab.0.bottom" timestamp="1575610667884">
+    <state x="376" y="206" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576821468517">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="200" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575610667884" />
-    <state width="1237" height="200" key="GridCell.Tab.0.center" timestamp="1575610667884">
+    <state x="376" y="206" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1576821468517" />
+    <state x="421" y="98" key="FileChooserDialogImpl" timestamp="1576821230196">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="200" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1575610667884" />
-    <state width="1237" height="200" key="GridCell.Tab.0.left" timestamp="1575610667884">
+    <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1576821230196" />
+    <state width="1237" height="171" key="GridCell.Tab.0.bottom" timestamp="1576821487314">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="200" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1575610667884" />
-    <state width="1237" height="200" key="GridCell.Tab.0.right" timestamp="1575610667884">
+    <state width="1237" height="171" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1576821487314" />
+    <state width="1237" height="171" key="GridCell.Tab.0.center" timestamp="1576821487313">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="200" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1575610667884" />
+    <state width="1237" height="171" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1576821487313" />
+    <state width="1237" height="171" key="GridCell.Tab.0.left" timestamp="1576821487312">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="171" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1576821487312" />
+    <state width="1237" height="171" key="GridCell.Tab.0.right" timestamp="1576821487314">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="171" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1576821487314" />
+    <state x="233" y="76" key="Vcs.Push.Dialog.v2" timestamp="1575615777318">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="76" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1575615777318" />
     <state x="297" y="151" width="672" height="677" key="run.anything.popup" timestamp="1575448889513">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
